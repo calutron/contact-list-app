@@ -1,9 +1,12 @@
-require_relative 'application.rb'
 
 ## TODO: Implement CSV reading/writing
 require 'csv'
-contacts = CSV.read('contacts.csv')
-contacts << ["peter pan", "peter@magic.com"]
-contacts << contact1
-
-puts contacts
+def create_newcontact(contact)
+  
+  #writing back all the contacts in the CSV again
+  CSV.open("contacts.csv", "a+") do |csv|
+    csv << [contact.id,contact.name, contact.email]
+  end
+  puts "Contact Added in the CSV"
+  
+end

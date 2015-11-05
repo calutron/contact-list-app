@@ -1,8 +1,10 @@
+require_relative 'contact_database'
 class Contact
  
-  attr_accessor :name, :email
+  attr_accessor :name, :email, :id
 
-  def initialize(name, email)
+  def initialize(id, name, email)
+    @id=id
     @name = name
     @email = email
     puts "contact is up"
@@ -14,9 +16,14 @@ class Contact
  
   ## Class Methods
   class << self
-    def create(name, email)
+    def create(id,name,email)
       # TODO: Will initialize a contact as well as add it to the list of contacts
-      contacts << ["@name", "@email"]
+      contact = Contact.new(id, name, email)   
+      create_newcontact(contact)
+      #create_newcontact(contact)
+      # self.new
+      # contact = []
+      # contacts << ["name", "email"]
     end
  
     def find(term)
@@ -25,6 +32,7 @@ class Contact
  
     def all
       # TODO: Return the list of contacts, as is
+      contacts=CSV.read('contacts.csv')
     end
     
     def show(id)
