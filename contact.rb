@@ -3,7 +3,9 @@ class Contact
   attr_accessor :name, :email
 
   def initialize(name, email)
-    # TODO: assign local variables to instance variables
+    @name = name
+    @email = email
+    puts "contact is up"
   end
  
   def to_s
@@ -14,6 +16,7 @@ class Contact
   class << self
     def create(name, email)
       # TODO: Will initialize a contact as well as add it to the list of contacts
+      contacts << ["@name", "@email"]
     end
  
     def find(term)
