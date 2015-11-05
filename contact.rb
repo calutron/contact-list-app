@@ -4,7 +4,7 @@ class Contact
   attr_accessor :name, :email, :id
 
   def initialize(id, name, email)
-    @id=id
+    @id = id
     @name = name
     @email = email
     puts "contact is up"
@@ -20,10 +20,6 @@ class Contact
       # TODO: Will initialize a contact as well as add it to the list of contacts
       contact = Contact.new(id, name, email)   
       create_newcontact(contact)
-      #create_newcontact(contact)
-      # self.new
-      # contact = []
-      # contacts << ["name", "email"]
     end
  
     def find(term)
