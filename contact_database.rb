@@ -5,7 +5,7 @@ def create_newcontact(contact)
   
   #writing back all the contacts in the CSV again
   CSV.open("contacts.csv", "a+") do |csv|
-    csv << [contact.id,contact.name, contact.email]
+    csv << contact.to_row
   end
   puts "Contact Added in the CSV"
   
