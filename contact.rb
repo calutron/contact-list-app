@@ -45,9 +45,10 @@ class Contact
       CSV.read('contacts.csv').map { |row| Contact.create_from(row) }
     end
     
-    def show(id)  
-      # TODO: Show a contact, based on ID
-    end
+    # def show(id)  
+    #   Contact.all.select { |c| c.name.include?(term) || c.email.include?(term) || c.id == term.to_i }
+    #   # TODO: Show a contact, based on ID
+    # end
     
   end
  
